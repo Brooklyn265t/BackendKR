@@ -1,0 +1,82 @@
+html {
+    height: 100%;
+}
+
+.LoginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    /*height: 250px;*/
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background: var(--color-other);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.LoginForm .input-box{
+    position: relative;
+}
+
+.LoginForm .input-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-primary-text);
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid var(--color-primary-footer);
+    outline: none;
+    background: transparent;
+}
+.LoginForm .input-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-primary-text);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.LoginForm .input-box input:focus ~ label,
+.LoginForm .input-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--color-primary-text);
+    font-size: 12px;
+}
+
+.LoginForm form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color-primary-text);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 20px;
+}
+.CenterButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SendData{
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-text);
+    height: 48px;
+    width: 64px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}

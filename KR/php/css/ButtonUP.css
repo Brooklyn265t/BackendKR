@@ -1,0 +1,22 @@
+#btnup {
+  background: transparent no-repeat center center; /*transparent прозрачный фон*/
+  background-size: 100% 100%;
+  background-image: url("../pictures/btnup.svg");
+  position: fixed; /* фиксированное позиционирование относительно области просмотра*/
+  background-color: var(--color-primary-text); /* цвет фона */
+  right: 30px; /* расстояние от правого края окна браузера */
+  bottom: 10px; /* расстояние от нижнего края окна браузера */
+  border-top-left-radius: 25px;   /* скругление верхнего левого угла */
+  border-top-right-radius: 25px;   /* скругление верхнего правого угла */
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;   /* вид курсора */
+  width: 50px; /* ширина элемента */
+  height: 50px; /* высота элемента */
+}
+
+@media (hover: hover) {
+  #btnup:hover {
+    background-color: dodgerblue; /* цвет заднего фона при наведении */
+  }
+}

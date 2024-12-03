@@ -1,0 +1,17 @@
+@media screen and (min-width: 1024px) and (max-width: 1920px){
+    .flexsocial{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 48px;
+        height: 48px;
+        margin-left: 25px;
+        cursor: pointer;
+        z-index: 0;
+    }
+    .flexsocial > img{
+        width: 100%;
+        height: 100%;
+    }
+}

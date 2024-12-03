@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+
+.RegisterForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 20px;
+    transform: translate(-40%, -40%);
+    background: var(--color-other);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.RegisterForm .input-box{
+    position: relative;
+}
+
+.RegisterForm .input-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-primary-text);
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid var(--color-primary-footer);
+    outline: none;
+    background: transparent;
+}
+.RegisterForm .input-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-primary-text);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.RegisterForm .input-box input:focus ~ label,
+.RegisterForm .input-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--color-primary-text);
+    font-size: 12px;
+}
+
+.RegisterForm form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color-primary-text);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 20px;
+}
+.CenterButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SendData{
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-text);
+    height: 48px;
+    width: 64px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+}

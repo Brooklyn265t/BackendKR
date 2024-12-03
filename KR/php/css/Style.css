@@ -1,0 +1,32 @@
+:root {
+    --color-primary-background: #201658;
+    --color-primary-footer: #1D24CA;
+    --color-primary-text: #F9E8C9;
+    --color-other: #98ABEE;
+}
+
+#backgroundsites{
+    background-color: var(--color-primary-background);
+    display: grid;
+}
+a:active { /*определяет стиль для активной ссылки*/
+    background-color: var(--color-primary-text);
+}
+a:hover{  /* псевдоклассы*/
+    color: #e5e833; /* Цвет ссылки */
+} /*Стилизует ссылку (элемент <a>) при наведении указателя мыши.*/
+
+a:visited { /*Стилизует ссылку по которой вы уже переходили.*/
+    color: #5cc350;
+}
+
+a{
+    text-decoration: none;
+}
+.PositionForNavigation{
+    position: fixed;
+    float: right;
+    right: 40px;
+    top: 20px;
+    z-index: 3;
+}

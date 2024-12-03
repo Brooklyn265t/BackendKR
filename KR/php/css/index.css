@@ -1,0 +1,85 @@
+/*в inline одстаивается подстраивает по шируну текста не можем*/
+/*в блоке можно задать ширину и высоту*/
+/*z-index -1 мещение на задний план*/
+/*Любые позиционированные элементы на веб-странице
+могут накладываться друг на друга*/
+/*em диница em позволяет установить размер шрифта элемента относительно размера шрифта его родителя
+размер изменяется у родителя и изменяется у em*/
+/*rem размер для html, относительно html =16px */
+
+@media screen and (min-width: 1024px) and (max-width: 1920px){
+    .main-font-color{
+        color: var(--color-primary-text);
+    }
+    .positionmain{
+        top: 5px;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .shrift{
+        font-family: "Times New Roman", serif;
+        font-size: 2rem;
+        color: var(--color-primary-text);
+    }
+    .infoOS{
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        color: var(--color-primary-text);
+    }
+    .h3info{
+        font-family: Arial, sans-serif;
+        font-size: 1.7rem;
+        color: var(--color-primary-text);
+    }
+    .infoOS > h3, p, h2, ol{
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        color: var(--color-primary-text);
+    }
+    .Textstyle{
+        display:flex;
+        margin-top: 100px;
+        font-size: 2rem; /*шрифт относительно html*/
+        color: var(--color-primary-text);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px){
+    .main-font-color{
+        color: var(--color-primary-text);
+    }
+    .positionmain{
+        top: 5px;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .shrift{
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        color: var(--color-primary-text);
+    }
+    .infoOS{
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        color: var(--color-primary-text);
+    }
+    .h3info{
+        font-family: Arial, sans-serif;
+        font-size: 1.7rem;
+        color: var(--color-primary-text);
+    }
+    .infoOS > h3, p, h2, ol{
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        color: var(--color-primary-text);
+    }
+
+    .Textstyle{
+        display:flex;
+        margin-top: 100px;
+        font-size: 2rem; /*шрифт относительно html*/
+        color: var(--color-primary-text);
+    }
+
+
+}
