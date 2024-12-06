@@ -15,20 +15,10 @@
         <nav class="PositionForNavigation">
             <a href="compare.php">Сравнение</a>
             <a href="distribution.php">Список дистрибутивов</a>
-            <a href="Account/register.php">Вход</a>
+            <a href="Account/login.php">Вход</a>
         </nav>
     </header>
     <main class="positionmain">
-    <?php
-    require_once 'dbconn.php';
-    $conn = connectToDB();
-    $result = $conn->query("SELECT * FROM distro");
-    echo "<table class='infoOS'>";
-    foreach ($result as $row){
-        echo "<tr><td>{$row['Distro_name']}</td><td><a href='{$row['Distro_link']}'>{$row['Distro_link']}</a></td></tr>";
-    }
-    echo "</table>";
-    ?>
     </main>
 </body>
 </html>

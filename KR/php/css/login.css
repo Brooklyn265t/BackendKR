@@ -7,7 +7,6 @@ html {
     top: 50%;
     left: 50%;
     width: 400px;
-    /*height: 250px;*/
     padding: 20px;
     transform: translate(-50%, -50%);
     background: var(--color-other);
@@ -17,6 +16,8 @@ html {
 
 .LoginForm .input-box{
     position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .LoginForm .input-box input {
@@ -32,21 +33,13 @@ html {
 }
 .LoginForm .input-box label {
     position: absolute;
-    top:0;
+    top: -30px;
     left: 0;
     padding: 10px 0;
     font-size: 16px;
     color: var(--color-primary-text);
     pointer-events: none;
     transition: .5s;
-}
-
-.LoginForm .input-box input:focus ~ label,
-.LoginForm .input-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: var(--color-primary-text);
-    font-size: 12px;
 }
 
 .LoginForm form a {
@@ -79,4 +72,9 @@ html {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

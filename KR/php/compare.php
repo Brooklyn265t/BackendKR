@@ -21,8 +21,8 @@
 </header>
 <main class="positionmain">
     <?php
-    require_once 'dbconn.php';
-    $conn = connectToDB();
+    require_once 'DB_Connect/dbconn.php';
+    $conn = PDO_db();
     $result = $conn->query("SELECT * FROM osvs");
     echo "<table class='infoOS'>";
     foreach ($result as $row){

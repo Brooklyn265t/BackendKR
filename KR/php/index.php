@@ -30,58 +30,16 @@
         <em class="main-font-color">По данным сайта <a href="https://gs.statcounter.com/os-market-share/desktop/worldwide">StatCounter июня 2023 года по июнь 2024 года</a><br></em>
         <!-- <em></em> акцентируемый текст -->
         <?php
-        require_once 'vendor/autoload.php';
-        require_once 'dbconn.php';
-        use Amenadiel\JpGraph\Graph;
-        use Amenadiel\JpGraph\Plot;
-        function bar() {
-            // Получение соединения с базой данных
-            $conn = connectToDB();
-            $uses = $conn->query("SELECT uses FROM populos");
-            $oses = $conn->query("SELECT name FROM populos");
+        include_once $_SERVER["DOCUMENT_ROOT"]."/DB_Connect/dbconn.php";
+        include $_SERVER["DOCUMENT_ROOT"]."/MVC/Controller/GraphController.php";
+        include $_SERVER["DOCUMENT_ROOT"]."/MVC/Model/GraphModel.php";
+        include $_SERVER["DOCUMENT_ROOT"]."/MVC/View/GraphView.php";
 
-            $data1 = array_map(function($x){
-                return (float)$x[0];
-            }, $uses->fetch_all());
-            $data2 = array_map(function($x){
-                return $x[0];
-            }, $oses->fetch_all());
-
-            // Create the graph. These two calls are always required
-            $__width  = 600;
-            $__height = 300;
-            $graph    = new Graph\Graph($__width, $__height);
-            $graph->SetScale('textlin');
-
-            $graph->SetShadow();
-            $graph->img->SetMargin(40, 30, 20, 40);
-
-            // Create the bar plots
-            $bplot = new Plot\BarPlot($data1);
-            $bplot->SetFillColor('green');
-            $bplot->value->Show();
-
-            // ...and add it to the graPH
-            $graph->Add($bplot);
-
-            $graph->title->Set('Popular OS');
-
-            $graph->xaxis->SetTickLabels($data2);
-
-            $graph->title->SetFont(FF_FONT1, FS_BOLD);
-            $graph->yaxis->title->SetFont(FF_FONT1, FS_BOLD);
-            $graph->xaxis->title->SetFont(FF_FONT1, FS_BOLD);
-
-            // Display the graph
-            $res = $graph->Stroke(_IMG_HANDLER);
-            ob_start();
-            imagepng($res);
-            $img = ob_get_contents();
-            ob_end_clean();
-            return base64_encode($img);
-        }
-        echo "<img src='data:image/png;base64,".bar()."'>";
-        ?>
+        $conn = PDO_db(); // Функция для подключения к базе данных
+        $model = new GraphModel($conn);
+        $controller = new GraphController($model);
+        $view = new GraphView($controller);
+        $view->print(); // Вывод графика?>
     </section>
 </main>
 <section class="infoOS">
@@ -131,6 +89,23 @@
             <li>Кривая обучения: Для новых пользователей может потребоваться время для освоения системы, особенно если они привыкли к Windows или Mac OS.</li>
         </ol>
 </section>
+<?php
+    require_once 'DB_Connect/dbconn.php';
+    $conn = PDO_db();
+    $Compare = $conn->query("SELECT * FROM osvs");
+    echo "<table class='infoOS'>";
+    foreach ($Compare as $row){
+        echo "<tr><td>{$row['characteristic']}</td><td>{$row['windows']}</td><td>{$row['macos']}</td><td>{$row['linux']}</td></tr>";
+    }
+    echo "</table>";
+    $result = $conn->query("SELECT * FROM distro");
+    echo "<table class='infoOS'>";
+    foreach ($result as $row){
+        echo "<tr><td>{$row['Distro_name']}</td><td><a href='{$row['Distro_link']}'>{$row['Distro_link']}</a></td></tr>";
+    }
+    echo "</table>";
+?>
+
 <div id="btnup"></div>
 <script src="js/btnUP.js"></script>
 <footer>

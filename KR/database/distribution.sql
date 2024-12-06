@@ -58,9 +58,6 @@ INSERT INTO populos (name, uses) VALUES
 CREATE TABLE userdata (
     User_id INT AUTO_INCREMENT,
     Username VARCHAR(20) NOT NULL,
-    email VARCHAR(60) NOT NULL,
-    password VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     PRIMARY KEY (User_id));
-
-INSERT INTO userdata (Username, email, password) VALUES
-    ('hello', 'hi@email.ru', '13579a');
