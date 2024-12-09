@@ -9,13 +9,21 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/SocialButton.css">
     <link rel="stylesheet" href="css/ButtonUP.css">
+    <link rel="stylesheet" href="css/burger.css">
 </head>
 <body id="backgroundsites">
 <header>
-    <nav class="PositionForNavigation">
-        <a href="compare.php">Сравнение</a>
-        <a href="distribution.php">Список дистрибутивов</a>
-        <a href="Account/register.php">Вход</a>
+    <input type="checkbox" id="burger-check">
+    <label class="burger" for="burger-check">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+    </label>
+        <nav class = "menupos">
+        <ul>
+            <li><a href="Card/AllCard.php">Операционные системы</a></li>
+            <li><a href="Account/register.php">Вход</a></li>
+        </ul>
     </nav>
 </header>
 <main class="positionmain">

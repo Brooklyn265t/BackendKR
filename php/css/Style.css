@@ -1,23 +1,27 @@
 :root {
-    --color-primary-background: #201658;
-    --color-primary-footer: #1D24CA;
-    --color-primary-text: #F9E8C9;
-    --color-other: #98ABEE;
+    --color-primary-background: #093ABF;
+    --color-primary-footer: #7EA0FC;
+    --color-primary-text: #DAE3FC;
+    --color-other: #FFAD00;
+    --color-other2: #eca507;
 }
 
 #backgroundsites{
     background-color: var(--color-primary-background);
     display: grid;
 }
+a{
+    color: #8b13bb;
+}
 a:active { /*определяет стиль для активной ссылки*/
-    background-color: var(--color-primary-text);
+    background-color: #dd3e0e;
 }
 a:hover{  /* псевдоклассы*/
-    color: #e5e833; /* Цвет ссылки */
+    color: #fdff3d; /* Цвет ссылки */
 } /*Стилизует ссылку (элемент <a>) при наведении указателя мыши.*/
 
 a:visited { /*Стилизует ссылку по которой вы уже переходили.*/
-    color: #5cc350;
+    color: #eca409;
 }
 
 a{

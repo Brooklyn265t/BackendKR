@@ -13,14 +13,29 @@ class RegisterView{
             $this->controller->registerUser();
         }
         echo <<< _HTML
-                <html lang="en">
-                    <head>
-                        <title>Вход в Аккаунт</title>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <link rel="stylesheet" href="../css/Style.css">
-                        <link rel="stylesheet" href="../css/Register.css">
-                    </head>
+            <html lang="en">
+                <head>
+                    <title>Вход в Аккаунт</title>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="../../css/Style.css">
+                    <link rel="stylesheet" href="../../css/burger.css">
+                    <link rel="stylesheet" href="../../css/Register.css">
+                </head>
+                <header>
+                    <input type="checkbox" id="burger-check">
+                    <label class="burger" for="burger-check">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </label>
+                        <nav class = "menupos">
+                        <ul>
+                            <li><a href="Card/AllCard.php">Операционные системы</a></li>
+                            <li><a href="Account/register.php">Вход</a></li>
+                        </ul>
+                    </nav>
+                </header>
                     <body id="backgroundsites">
                     <div class="RegisterForm">
                         <form method="post">
@@ -43,7 +58,9 @@ class RegisterView{
                             <div class="CenterButton">
                                 <button class="SendData" type="submit">Register</button>
                             </div>
-                            <a class="center" href="login.php">Войти в аккаунт</a>
+                            <div>
+                                <a class="center" href="login.php">Войти в аккаунт</a>
+                            </div>
                         </form>
                     </div>
                     </body>

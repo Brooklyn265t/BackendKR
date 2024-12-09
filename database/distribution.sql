@@ -61,3 +61,43 @@ CREATE TABLE userdata (
     email VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (User_id));
+
+CREATE TABLE Windows11_Characteristics (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    requirement_type VARCHAR(50),
+    processor VARCHAR(255),
+    ram VARCHAR(50),
+    storage VARCHAR(255),
+    firmware VARCHAR(255),
+    tpm VARCHAR(50),
+    graphics_card VARCHAR(255),
+    display VARCHAR(255),
+    internet_connection VARCHAR(255),
+    additional_features TEXT
+);
+
+INSERT INTO Windows11_Characteristics (requirement_type, processor, ram, storage, firmware, tpm, graphics_card, display, internet_connection, additional_features)
+VALUES
+    ('Минимальные', '1 ГГц или быстрее с 2 ядрами', '4 ГБ', '64 ГБ или больше', 'UEFI, поддержка Secure Boot', 'TPM 2.0', 'DirectX 12, WDDM 2.0', 'HD (720p) или выше', 'Требуется для обновлений и загрузки некоторых функций', 'Новый интерфейс, поддержка приложений Android, улучшенные функции безопасности'),
+    ('Рекомендуемые', 'Современный многоядерный процессор', '8 ГБ', 'SSD', 'UEFI, поддержка Secure Boot', 'TPM 2.0', 'DirectX 12, поддержка HDR', '1920x1080 или выше', 'Требуется для обновлений и загрузки некоторых функций', 'Поддержка DirectStorage и Auto HDR для улучшения игрового опыта');
+
+CREATE TABLE Linux_Characteristics (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    distribution VARCHAR(50),
+    requirement_type VARCHAR(50),
+    processor VARCHAR(255),
+    ram VARCHAR(50),
+    storage VARCHAR(255),
+    graphics_card VARCHAR(255),
+    display VARCHAR(255),
+    internet_connection VARCHAR(255),
+    additional_features TEXT
+);
+
+INSERT INTO Linux_Characteristics (distribution, requirement_type, processor, ram, storage, graphics_card, display, internet_connection, additional_features)
+VALUES
+    ('Linux Mint', 'Минимальные', '1 ГГц или быстрее', '2 ГБ', '15 ГБ свободного места', 'Совместимая с OpenGL', '1024x768 или выше', 'Необязательно', 'Легкий и удобный интерфейс, поддержка мультимедиа'),
+    ('Linux Mint', 'Рекомендуемые', '2 ГГц или быстрее', '4 ГБ', '20 ГБ свободного места', 'Совместимая с OpenGL', '1366x768 или выше', 'Необязательно', 'Поддержка современных приложений и игр'),
+    ('Ubuntu', 'Минимальные', '2 ГГц двухъядерный процессор', '2 ГБ', '25 ГБ свободного места', 'Совместимая с OpenGL', '1024x768 или выше', 'Необязательно', 'Поддержка Snap-пакетов, активное сообщество'),
+    ('Ubuntu', 'Рекомендуемые', '2 ГГц четырехъядерный процессор', '4 ГБ', '25 ГБ свободного места', 'Совместимая с OpenGL', '1366x768 или выше', 'Необязательно', 'Поддержка современных приложений и игр, улучшенная безопасность');
+

@@ -1,52 +1,58 @@
-html {
+html{
     height: 100%;
 }
 
-.LoginForm {
+#backgroundsites{
+    background-color: var(--color-primary-background);
+    display: grid;
+}
+
+
+.RegisterForm {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 400px;
     padding: 20px;
     transform: translate(-50%, -50%);
-    background: var(--color-other);
+    background: #7EA0FC;
     box-sizing: border-box;
     border-radius: 10px;
 }
 
-.LoginForm .input-box{
+.RegisterForm .input-box{
     position: relative;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
-.LoginForm .input-box input {
+.RegisterForm .input-box input {
     width: 100%;
     padding: 10px 0;
-    font-size: 16px;
-    color: var(--color-primary-text);
+    font-size: 14px;
+
     margin-bottom: 20px;
     border: none;
-    border-bottom: 1px solid var(--color-primary-footer);
+    border-bottom: 1px solid #093ABF;
     outline: none;
     background: transparent;
 }
-.LoginForm .input-box label {
+.RegisterForm .input-box label {
     position: absolute;
     top: -30px;
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: var(--color-primary-text);
+
     pointer-events: none;
     transition: .5s;
 }
 
-.LoginForm form a {
+.RegisterForm form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: var(--color-primary-text);
+
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -60,8 +66,8 @@ html {
     justify-content: center;
 }
 .SendData{
-    background-color: var(--color-primary-background);
-    color: var(--color-primary-text);
+    background-color: #093ABF;
+
     height: 48px;
     width: 64px;
     align-items: center;
@@ -70,11 +76,11 @@ html {
     border-radius: 12px;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
 }
 .center{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
 }

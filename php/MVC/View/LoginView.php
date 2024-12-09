@@ -17,13 +17,28 @@ class LoginView
         }
         echo <<< _HTML
             <html lang="en">
-                    <head>
-                        <title>Вход в Аккаунт</title>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <link rel="stylesheet" href="../css/login.css">
-                        <link rel="stylesheet" href="../css/Style.css">
-                    </head>
+                <head>
+                    <title>Вход в Аккаунт</title>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="../../css/Style.css">
+                    <link rel="stylesheet" href="../../css/burger.css">
+                    <link rel="stylesheet" href="../../css/login.css">
+                </head>
+                <header>
+                    <input type="checkbox" id="burger-check">
+                    <label class="burger" for="burger-check">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </label>
+                        <nav class = "menupos">
+                        <ul>
+                            <li><a href="Card/AllCard.php">Операционные системы</a></li>
+                            <li><a href="Account/register.php">Вход</a></li>
+                        </ul>
+                    </nav>
+                </header>
                     <body id="backgroundsites">
                     <div class="LoginForm">
                         <form method="post">
@@ -38,7 +53,9 @@ class LoginView
                             <div class="CenterButton">
                                 <button class="SendData" type="submit">Login</button>
                             </div>
-                            <a class="center" href="../../Account/register.php">Зарегистрироваться</a>
+                            <div>
+                                <a class="center" href="../../Account/register.php">Зарегистрироваться</a>
+                            </div>
                         </form>
                     </div>
                     </body>

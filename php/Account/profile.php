@@ -15,34 +15,32 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/profile.css">
 </head>
-<body id="background">
+<body id="backgroundsites">
 <?php
 include "../DB_Connect/dbconn.php";
-
 // Создание соединения
 $conn = PDO_db();
 // Получение списка таблиц
-$result = $conn->query("SELECT * FROM distro");
+$result1 = $conn->query("SELECT * FROM distro");
 echo "<table>";
-foreach ($result as $row) {
-    echo "<tr><td>{$row['Distro_name']}</td><td>{$row['Distro_link']}</td></tr>";
+foreach ($result1 as $row){
+    echo "<tr><td>{$row['Distro_name']}</td><td><a href='{$row['Distro_link']}'>{$row['Distro_link']}</a></td></tr>";
 }
 echo "</table>";
 
-$result = $conn->query("SELECT * FROM osvs");
+$result2 = $conn->query("SELECT * FROM osvs");
 echo "<table>";
-foreach ($result as $row) {
+foreach ($result2 as $row) {
     echo "<tr><td>{$row['characteristic']}</td><td>{$row['windows']}</td><td>{$row['macos']}</td><td>{$row['linux']}</td></tr>";
 }
 echo "</table>";
 
-$result = $conn->query("SELECT * FROM populos");
+$result3 = $conn->query("SELECT * FROM populos");
 echo "<table>";
-foreach ($result as $row) {
+foreach ($result3 as $row) {
     echo "<tr><td>{$row['name']}</td><td>{$row['uses']}</td></tr>";
 }
 echo "</table>";
-
 ?>
 </body>
 </html>

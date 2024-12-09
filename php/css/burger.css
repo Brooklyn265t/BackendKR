@@ -1,0 +1,60 @@
+nav > ul {
+    list-style-type: none;
+}
+
+.menupos{
+    font-size: 16px;
+    position: fixed;
+    float: right; /*выравнивание по правому краю*/
+    right: 60px;
+    top: 40px;
+    z-index: 3;
+}
+
+.burger{
+    position: fixed;
+    float: right;
+    top: 10px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;;
+    background-color: var(--color-primary-footer);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 2;
+}
+.burger-line {
+    width: 60%; /*Процентные значения от длины родительского блока*/
+    height: 10%; /*Процентные значения от высоты родительского блока*/
+    background-color: black;
+}
+
+#burger-check{
+    display: none;
+}
+
+#burger-check:checked ~ #burger {
+    /*выбирает элементы, которые находятся на этом же уровне вложенности,
+    после указанного элемента, с тем же родителем.*/
+    background-color: var(--color-primary-footer);
+}
+
+#burger-check:checked ~ nav {
+    float: right;
+    display: block;
+    background: var(--color-primary-footer);
+    
+}
+
+nav{
+    float: right;
+    display: none;
+}
+li{
+    margin-right: 20px;
+}
