@@ -22,7 +22,7 @@
         <nav class = "menupos">
         <ul>
             <li><a href="Card/AllCard.php">Операционные системы</a></li>
-            <li><a href="Account/register.php">Вход</a></li>
+            <li><a href="Account/login.php">Вход</a></li>
         </ul>
     </nav>
 </header>
@@ -119,9 +119,6 @@
 <footer>
     <p class="shrift">© Beloglintsev Ivan 2022-<span id="current-year"></span></p>
     <script src="js/CurrentYear.js"></script>
-<!--    <div class="flexsocial">-->
-<!--        <img class="img" src="pictures/Telegram.png" alt="">-->
-<!--    </div>-->
 </footer>
 </body>
 </html>

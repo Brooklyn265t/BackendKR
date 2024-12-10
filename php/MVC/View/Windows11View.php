@@ -1,17 +1,11 @@
 <?php
-class Windows11View
-{
+class Windows11View{
     private $controller;
-
-    public function __construct($controller)
-    {
+    public function __construct($controller){
         $this->controller = $controller;
     }
-
-    public function showRequirements(): void
-    {
+    public function showRequirements(): void{
         list($requirements, $distroLink) = $this->controller->show();
-
         echo <<< _HTML
             <html lang="ru">
                 <head>
@@ -41,7 +35,6 @@ class Windows11View
                 <div class="InfoOS">
                     <h1>Справочник по Windows 11</h1>
                     <p>Windows 11 — это последняя версия операционной системы от Microsoft, выпущенная в октябре 2021 года. Она предлагает множество новых функций и улучшений по сравнению с предыдущими версиями.</p>
-                
                     <h2>Основные функции Windows 11:</h2>
                     <ul>
                         <li>Обновленный интерфейс пользователя с центром задач и новыми значками.</li>
@@ -50,10 +43,8 @@ class Windows11View
                         <li>Интеграция с Microsoft Teams для удобного общения.</li>
                         <li>Новые возможности для многозадачности, включая Snap Layouts и Snap Groups.</li>
                     </ul>
-
                     <h2>Как обновить до Windows 11:</h2>
                     <p>Чтобы обновить до Windows 11, убедитесь, что ваше устройство соответствует системным требованиям, и используйте Windows Update для загрузки и установки новой версии.</p>
-
                     <h1>Системные требования Windows 11</h1>
                     <table border="1">
                         <tr class="info">
@@ -69,7 +60,6 @@ class Windows11View
                             <th>Дополнительные функции</th>
                         </tr>
         _HTML;
-
         foreach ($requirements as $requirement) {
             echo <<< _HTML
                             <tr class="info">
@@ -86,7 +76,6 @@ class Windows11View
                             </tr>
             _HTML;
         }
-
         echo <<< _HTML
                         </table>
                         <p class="InfoOS"><a href="{$distroLink}">Скачать Windows 11</a></p>

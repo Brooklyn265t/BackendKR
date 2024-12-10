@@ -2,15 +2,11 @@
 include_once $_SERVER["DOCUMENT_ROOT"]."/DB_Connect/dbconn.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/MVC/Model/LoginModel.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/MVC/Controller/LoginController.php";
-class LoginView
-{
+class LoginView{
     private $controller;
-
-    public function __construct($controller)
-    {
+    public function __construct($controller){
         $this->controller = $controller;
     }
-
     public function showLoginForm(): void{
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->controller->loginUser();
@@ -35,7 +31,7 @@ class LoginView
                         <nav class = "menupos">
                         <ul>
                             <li><a href="Card/AllCard.php">Операционные системы</a></li>
-                            <li><a href="Account/register.php">Вход</a></li>
+                            <li><a href="../../index.php">Главная страница</a></li>
                         </ul>
                     </nav>
                 </header>

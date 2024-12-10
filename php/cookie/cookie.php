@@ -2,45 +2,60 @@
 class UserSession {
     private $redis;
     private $key = 'user_session';
-
     public function __construct() {
-        // Запускаем сессию
-        session_start();
+        // Получаем email пользователя из формы логина/регистрации
+        $this->user_email = $_SESSION['email'] ?? '';
+        // Проверяем, есть ли активная сессия
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
         $this->saveToSession();
         $this->setCookies();
         $this->saveToRedis();
     }
-
-    private function saveToSession() {
-        $_SESSION['user_ip'] = $this->user_ip;
-        $_SESSION['user_language'] = $this->user_language;
-    }
-
     private function setCookies() {
-        setcookie('user_ip', $this->user_ip, time() + (2 * 60 * 60), "/");
-        setcookie('user_language', $this->user_language, time() + (2 * 60 * 60), "/");
+        setcookie(
+            'user_session',
+            $this->user_email,
+            time() + 60 * 60, // 1 час
+            '/',
+            '',
+            true, // HttpOnly
+            true // Secure
+        );
     }
-
+    private function saveToSession() {
+        $_SESSION['email'] = $this->user_email;
+    }
+    public function getUserEmailFromCookie() {
+        if (isset($_COOKIE['user_session'])) {
+            return $_COOKIE['user_session'];
+        }
+        return null;
+    }
+    public function getUserEmailFromRedis() {
+        $this->redis = new Redis();
+        try {
+            $this->redis->connect('localhost', 6379);
+            $email = $this->redis->get($this->key . ':email');
+        } catch (Exception $e) {
+            error_log("Redis connection error: " . $e->getMessage());
+            return null;
+        } finally {
+            $this->redis->close();
+        }
+        return $email;
+    }
     private function saveToRedis() {
-        $redis = new Redis();
-        $redis->connect('localhost', 6379);
-
-        $redis->set($this->key . ':ip', $this->user_ip);
-        $redis->set($this->key . ':language', $this->user_language);
-
-        $redis->close();
-    }
-
-    public function getUserIPFromRedis() {
-        $redis = new Redis();
-        $redis->connect('localhost', 6379);
-
-        $ip = $redis->get($this->key . ':ip');
-        $language = $redis->get($this->key . ':language');
-
-        $redis->close();
-
-        return array('ip' => $ip, 'language' => $language);
+        $this->redis = new Redis();
+        try {
+            $this->redis->connect('localhost', 6379);
+            $this->redis->setex($this->key . ':email', 3600, $this->user_email);
+        } catch (Exception $e) {
+            error_log("Redis connection error: " . $e->getMessage());
+        } finally {
+            $this->redis->close();
+        }
     }
 }
 ?>

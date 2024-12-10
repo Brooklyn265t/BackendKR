@@ -4,7 +4,6 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/MVC/Model/RegisterModel.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/MVC/Controller/RegisterController.php";
 class RegisterView{
     private $controller;
-
     public function __construct($controller){
         $this->controller = $controller;
     }
@@ -15,7 +14,7 @@ class RegisterView{
         echo <<< _HTML
             <html lang="en">
                 <head>
-                    <title>Вход в Аккаунт</title>
+                    <title>Регистрация аккаунта</title>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <link rel="stylesheet" href="../../css/Style.css">
@@ -32,7 +31,7 @@ class RegisterView{
                         <nav class = "menupos">
                         <ul>
                             <li><a href="Card/AllCard.php">Операционные системы</a></li>
-                            <li><a href="Account/register.php">Вход</a></li>
+                            <li><a href="../../index.php">Главная страница</a></li>
                         </ul>
                     </nav>
                 </header>
